@@ -11,7 +11,7 @@ resource "google_compute_network" "default" {
 resource "google_compute_subnetwork" "default" {
   name                      = "vm1-subnet"
   ip_cidr_range             = "192.168.100.0/24"
-  region                    = "us-east1"
+  region                    = var.region
   stack_type                = "IPV4_ONLY"
   network                   = google_compute_network.default.id
   # Private Google Access 활성화
@@ -21,7 +21,7 @@ resource "google_compute_subnetwork" "default" {
 # 동적 라우팅 및 Cloud NAT의 제어부 역할을 하는 Cloud Router를 생성합니다.
 resource "google_compute_router" "default" {
   name    = "outbound-nat"
-  region  = "us-east1"
+  region  = var.region
   network = google_compute_network.default.id
 
  bgp {

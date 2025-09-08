@@ -3,13 +3,22 @@
 이 프로젝트는 Terraform을 사용하여 Google Cloud VM을 설정합니다.
 
 ## 0. 환경설정
+
+환경변수 설정
 ```bash
-export GOOGLE_CLOUD_PROJECT="YOUR_PROJECT_ID"
-export GOOGLE_CLOUD_LOCATION="us-central1" 
+export PROJECT_ID="YOUR_PROJECT_ID" //qwiklabs-gcp-00-90a5c37a7501
+export REGION="us-central1" 
+```
+
+terraform.tfvars 파일 업데이트
+```bash
+sed -i \
+-e "s/your-gcp-project-id/$PROJECT/" \
+-e "s/your-region/$REGION/" \
+terraform.tfvars
 ```
 
 ## 1. Terraform 설치
-
 
 ```bash
 terraform init
@@ -23,7 +32,7 @@ VM은 외부 IP 주소 없이 생성되어, IAP를 통해서만 SSH 로액세스
 다음 `gcloud` 명령을 사용하여 VM에 연결합니다.
 
 ```bash
-gcloud compute ssh cli-vm --zone $GOOGLE_CLOUD_LOCATION --project $GOOGLE_CLOUD_PROJECT
+gcloud compute ssh cli-vm --zone $REGION --project $PROJECT
 ```
 
 ## Terraform 으로 생성되는 리소스

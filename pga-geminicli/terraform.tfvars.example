@@ -1,6 +1,0 @@
-project_id            = "your-gcp-project-id"
-network_id            = "gemini-vpc-net"
-service_account_email = "your-service-account-email"
-vm_name               = "cli-vm"
-zone                  = "us-east1-b"
-machine_type          = "n2-standard-2"

@@ -1,7 +1,7 @@
 # 'cli-vm'이라는 이름의 Compute Engine VM 인스턴스를 생성합니다. 이 VM은 외부 IP 없이 생성됩니다.
 resource "google_compute_instance" "vm1" {
   name         = var.vm_name
-  zone         = var.zone
+  zone         = "${var.region}-c"
   machine_type = var.machine_type
 
   boot_disk {

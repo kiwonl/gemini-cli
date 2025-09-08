@@ -3,7 +3,7 @@
 resource "google_project_iam_member" "instance_admin" {
   project = var.project_id
   role    = "roles/compute.instanceAdmin.v1"
-  member  = "serviceAccount:${var.service_account_email}"
+  member  = "serviceAccount:${var.project_id}@${var.project_id}.iam.gserviceaccount.com"
 }
 
 # 지정된 서비스 계정에 'IAP-secured Tunnel User' 역할을 부여
@@ -11,5 +11,5 @@ resource "google_project_iam_member" "instance_admin" {
 resource "google_project_iam_member" "iap_tunnel_user" {
   project = var.project_id
   role    = "roles/iap.tunnelResourceAccessor"
-  member  = "serviceAccount:${var.service_account_email}"
+  member  = "serviceAccount:${var.project_id}@${var.project_id}.iam.gserviceaccount.com"
 }

@@ -1,5 +1,5 @@
 project_id            = "your-gcp-project-id"
-region                  = "your-region"
+region                = "your-region"
 network_id            = "gemini-vpc-net"
 vm_name               = "cli-vm"
 machine_type          = "n2-standard-2"

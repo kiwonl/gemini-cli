@@ -13,7 +13,7 @@ export REGION="us-central1"
 terraform.tfvars 파일 업데이트
 ```bash
 sed -i \
--e "s/your-gcp-project-id/$PROJECT/" \
+-e "s/your-gcp-project-id/$PROJECT_ID/" \
 -e "s/your-region/$REGION/" \
 terraform.tfvars
 ```

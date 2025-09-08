@@ -8,10 +8,6 @@
 # Crash log files
 crash.log
 
-# Exclude all .tfvars files, which are likely to contain sensitive data,
-# with the exception of any example files.
-*.tfvars
-
 # Ignore override files as they are usually used for local customizations
 override.tf
 override.tf.json
@@ -24,4 +20,3 @@ override.tf.json
 # Terraform configuration files
 .terraformrc
 terraform.rc
-pga-geminicli/.terraform.lock.hcl

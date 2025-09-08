@@ -24,3 +24,4 @@ override.tf.json
 # Terraform configuration files
 .terraformrc
 terraform.rc
+pga-geminicli/.terraform.lock.hcl

@@ -1,4 +1,3 @@
-# Variables for your GCP environment.
 # 이 파일의 변수들을 자신의 Google Cloud 환경에 맞게 수정해주세요.
 
 # Google Cloud Project ID

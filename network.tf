@@ -1,4 +1,3 @@
-# Create a custom mode VPC (Virtual Private Cloud) network
 # 커스텀 모드 VPC 네트워크를 생성합니다. auto_create_subnetworks = false로 설정하여
 # 서브넷을 수동으로 관리하고, 라우팅 모드를 GLOBAL로 설정하여 모든 리전의 리소스가 통신할 수 있도록 합니다.
 resource "google_compute_network" "default" {
@@ -9,7 +8,6 @@ resource "google_compute_network" "default" {
   routing_mode            = "GLOBAL"
 }
 
-# Create a subnetwork within the VPC
 # 위에서 생성한 VPC 네트워크 내에 서브넷을 생성합니다.
 # private_ip_google_access = true로 설정하여 외부 IP가 없는 VM에서도 Google API 및 서비스에 비공개로 액세스할 수 있도록 합니다.
 resource "google_compute_subnetwork" "default" {
@@ -21,7 +19,6 @@ resource "google_compute_subnetwork" "default" {
   private_ip_google_access = true
 }
 
-# Create a Cloud Router for dynamic routing and Cloud NAT
 # 동적 라우팅 및 Cloud NAT의 제어부 역할을 하는 Cloud Router를 생성합니다.
 # BGP(Border Gateway Protocol)를 사용하여 네트워크 정보를 교환합니다.
 resource "google_compute_router" "default" {
@@ -34,7 +31,6 @@ resource "google_compute_router" "default" {
   }
 }
 
-# Create a Cloud NAT gateway for outbound internet access
 # 외부 IP 주소가 없는 VM 인스턴스가 인터넷에 액세스할 수 있도록 Cloud NAT 게이트웨이를 생성합니다.
 # 모든 서브넷의 모든 IP 범위를 NAT 대상으로 지정하고, 오류만 로깅하도록 설정합니다.
 resource "google_compute_router_nat" "default" {

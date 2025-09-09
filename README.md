@@ -1,4 +1,5 @@
-# pga-geminicli
+# Overview
+PSC for Google API 를 사용하여 Gemini CLI 를 Private Connection 으로 연결하는 방법
 
 ![alt text](./images/psc-overview.png)
 
